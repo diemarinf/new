@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServicioService } from '../service/servicio.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor( private servicio : ServicioService) {}
+
+  mensaje : string = '';
+  onServicio(){
+    this.servicio.setMensaje(this.mensaje);
+    
+  } 
 
 }
